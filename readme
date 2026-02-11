@@ -1,0 +1,50 @@
+# Flat File Database – Brugerdatabase i JSON
+
+## Hvorfor er det smart at bruge en flat_file_db?
+
+En flat file database gemmer alle data direkte i én fil – her i JSON-format. Det er smart fordi:
+
+- **Ingen opsætning** – der kræves ingen databaseserver, ingen installation og ingen konfiguration. Det virker bare.
+- **Portabilitet** – databasen er en enkelt fil der nemt kan kopieres, deles eller flyttes.
+- **Læsbart format** – JSON kan åbnes i et tekstprogram og forstås med det samme, uden SQL-forespørgsler.
+- **Perfekt til små projekter** – til prototyper og applikationer med få brugere er det mere end tilstrækkeligt og langt hurtigere at implementere end en rigtig database.
+
+---
+
+## Funktioner
+
+Databasen understøtter følgende funktioner, fundet via test design:
+
+| Funktion | Beskrivelse |
+|---|---|
+| `create_user(...)` | Opret en ny bruger |
+| `get_user(person_id)` | Hent én bruger via ID |
+| `get_all_users()` | Hent alle brugere |
+| `update_user(person_id, **kwargs)` | Opdatér felter på en bruger |
+| `delete_user(person_id)` | Slet en bruger |
+
+---
+
+## Datastruktur
+
+```json
+{
+  "person_id": 1,
+  "first_name": "Anders",
+  "last_name": "Jensen",
+  "address": "Hovedgaden",
+  "street_number": "12",
+  "password": "password123",
+  "enabled": true
+}
+```
+
+---
+
+## Sådan kører du tests
+
+```bash
+python -m unittest test_flat_file_db -v
+```
+
+*(Indsæt screenshot af testkørsel her)*

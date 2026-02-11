@@ -1,0 +1,20 @@
+[
+  {
+    "person_id": 1,
+    "first_name": "diaco",
+    "last_name": "sabir",
+    "address": "næstved",
+    "street_number": "1",
+    "password": "f5cafacc38a7216e813b7268ceb853f5cab6220386ca8f97e244e1a016e58312",
+    "enabled": true
+  },
+  {
+    "person_id": 2,
+    "first_name": "Sofie",
+    "last_name": "Møller",
+    "address": "Birkevej",
+    "street_number": "2",
+    "password": "6077d0ff4d65ed80bdf7319c4db3ee2930756f08a3f92d505a3ab51ba51f12af",
+    "enabled": true
+  }
+]
