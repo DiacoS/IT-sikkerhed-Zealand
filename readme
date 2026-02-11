@@ -17,34 +17,40 @@ Databasen understøtter følgende funktioner, fundet via test design:
 
 | Funktion | Beskrivelse |
 |---|---|
-| `create_user(...)` | Opret en ny bruger |
-| `get_user(person_id)` | Hent én bruger via ID |
-| `get_all_users()` | Hent alle brugere |
+| `create_user(...)` | Opret en ny bruger – persondata krypteres og password hashes automatisk |
+| `get_user(person_id)` | Hent én bruger via ID – data dekrypteres ved hentning |
+| `get_all_users()` | Hent alle brugere – data dekrypteres ved hentning |
 | `update_user(person_id, **kwargs)` | Opdatér felter på en bruger |
 | `delete_user(person_id)` | Slet en bruger |
 
 ---
 
-## Datastruktur
+## Kryptering og hashing
+
+For at overholde GDPR og beskytte brugerdata er følgende implementeret:
+
+kryptering med Fernet (AES-128-CBC) inden det gemmes i JSON-filen. Det betyder at selv hvis filen falder i de forkerte hænder, er dataene ulæselige uden nøglen.
+
+password hash med SHA-256. Et hash er envejs – passwordet kan aldrig genskabes fra hashen, heller ikke af systemet selv.
+
+Dataene i `users.json` ser derfor sådan ud:
 
 ```json
 {
   "person_id": 1,
-  "first_name": "Anders",
-  "last_name": "Jensen",
-  "address": "Hovedgaden",
-  "street_number": "12",
-  "password": "password123",
+  "first_name": "gAAAAABn...",
+  "last_name": "gAAAAABn...",
+  "address": "gAAAAABn...",
+  "street_number": "gAAAAABn...",
+  "password": "ef92b778bafe771207...",
   "enabled": true
 }
 ```
 
----
+ hvis du vil kører testene hihi 
 
-## Sådan kører du tests
 
-```bash
 python -m unittest test_flat_file_db -v
+python -m unittest test_kryptering -v
 ```
-
-*(Indsæt screenshot af testkørsel her)*
+SE IMAGE MAPPEN FOR SCREENSHOTS

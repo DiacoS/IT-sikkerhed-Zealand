@@ -27,7 +27,7 @@ class TestCreateUser(unittest.TestCase):
         self.assertEqual(user["last_name"], "Jensen")
         self.assertEqual(user["address"], "Hovedgaden")
         self.assertEqual(user["street_number"], "12")
-        self.assertEqual(user["password"], _hash_password(""))
+        self.assertEqual(user["password"], _hash_password("password123"))
         self.assertTrue(user["enabled"])
 
     def test_opret_bruger_far_unikt_person_id(self):
