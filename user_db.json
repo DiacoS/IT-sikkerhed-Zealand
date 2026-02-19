@@ -1,0 +1,26 @@
+{
+  "nextId": 4,
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "$2a$10$B1BcMukQ0W6emwlW6umbV.Q4qa73UdRBEzfWNxVW7ffUJRLTMByGG",
+      "role": "admin",
+      "active": true
+    },
+    {
+      "id": 2,
+      "username": "johndoe",
+      "password": "$2a$10$LrTSgbk0V/u0B6g2BxDM8Ojph2fGNJEud/AM3pH.vJZ1GwYusLBde",
+      "role": "user",
+      "active": true
+    },
+    {
+      "id": 3,
+      "username": "hej",
+      "password": "$2a$10$psRkfaGC.DAXzAH2EnMeVeFz4yRNANHEzWe/nCwZZVROBY7GHBdbC",
+      "role": "user",
+      "active": true
+    }
+  ]
+}
