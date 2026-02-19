@@ -1,0 +1,32 @@
+﻿# REST API - Auth system
+
+Lavet som del af IT-sikkerhed på Zealand Næstved.
+
+Et REST API med login, registrering, JWT tokens og et admin panel.
+Bruger en JSON fil som database så man slipper for at sætte en hel database server op.
+Der er også en lille frontend hvor man kan logge ind, oprette brugere osv.
+
+---
+
+## Kom i gang
+
+```bash
+npm install
+npm run dev
+```
+
+Kører på `http://localhost:3000`
+
+Admin login: `admin` / `admin123`
+
+---
+
+## Swagger
+
+Swagger UI kører på:
+
+```n
+http://localhost:3000/api-docs
+```
+
+Der kan man se alle endpoints, hvad de forventer og hvad de returnerer. Man kan også teste dem direkte derfra - bare husk at trykke "Authorize" og smid din Bearer token ind først.
